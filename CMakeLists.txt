@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.19)
 project(my_application LANGUAGES CXX)
 
-# Note: Use find_package(SixtyFPS) instead of the following three commands, if you prefer the package
-# approach.
-include(FetchContent)
-FetchContent_Declare(
+find_package(SixtyFPS)
+if (NOT SixtyFPS_FOUND)
+  # If SixtyFPS packages is not found, download from git
+  include(FetchContent)
+  FetchContent_Declare(
     SixtyFPS
     GIT_REPOSITORY https://github.com/sixtyfpsui/sixtyfps.git
     GIT_TAG v0.1.4
     SOURCE_SUBDIR api/sixtyfps-cpp
-)
-FetchContent_MakeAvailable(SixtyFPS)
+  )
+  FetchContent_MakeAvailable(SixtyFPS)
+endif (NOT SixtyFPS_FOUND)
 
 add_executable(my_application src/main.cpp)
 target_link_libraries(my_application PRIVATE SixtyFPS::SixtyFPS)
