@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.19)
 project(my_application LANGUAGES CXX)
 
-find_package(SixtyFPS)
+find_package(SixtyFPS QUIET)
 if (NOT SixtyFPS_FOUND)
-  # If SixtyFPS packages is not found, download from git
+  message("SixtyFPS could not be located in the CMake module search path. Downloading it from Git and building it locally");
   include(FetchContent)
   FetchContent_Declare(
     SixtyFPS
