@@ -17,7 +17,7 @@ In order to use this template and build a C++ application, you need to install a
 
 If your target environment is Linux or Windows on an x86-64 architecture, then you may also opt into downloading one of our binary SixtyFPS packages. These are pre-compiled and require no further tools. You can find setup instructions and download links at
 
-    <https://sixtyfps.io/docs/cpp/cmake.html#binary-packages>
+<https://sixtyfps.io/docs/cpp/cmake.html#binary-packages>
 
 Alternatively, this template will automatically download the SixtyFPS sources and compile them. This option requires you to install Rust by following the [Rust Getting Started Guide](https://www.rust-lang.org/learn/get-started). Once this is done, you should have the ```rustc``` compiler and the ```cargo``` build system installed in your path.
 
