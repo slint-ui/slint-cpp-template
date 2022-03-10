@@ -8,7 +8,7 @@ if (NOT Slint_FOUND)
   FetchContent_Declare(
     Slint
     GIT_REPOSITORY https://github.com/slint-ui/slint.git
-    GIT_TAG v0.2.1
+    GIT_TAG release/0.2
     SOURCE_SUBDIR api/cpp
   )
   FetchContent_MakeAvailable(Slint)
