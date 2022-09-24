@@ -13,7 +13,7 @@ C++ code, how to trigger react to callbacks, get and set properties and use basi
 In order to use this template and build a C++ application, you need to install a few tools:
 
   * **[cmake](https://cmake.org/download/)** (3.19 or newer)
-  * A C++ compiler that supports C++ version 17 or newer
+  * A C++ compiler that supports C++ 20 
 
 If your target environment is Linux or Windows on an x86-64 architecture, then you may also opt into downloading one of our binary Slint packages. These are pre-compiled and require no further tools. You can find setup instructions and download links at
 
