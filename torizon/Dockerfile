@@ -6,7 +6,7 @@ ARG IMAGE_ARCH=linux/arm64
 ARG BASE_NAME=wayland-base
 FROM torizon/debian-cross-toolchain-$TOOLCHAIN_ARCH:2-bullseye AS build
 ARG TOOLCHAIN_ARCH
-ARG RUST_TOOLCHAIN_ARCH=aarch64-unknown-linx-gnu
+ARG RUST_TOOLCHAIN_ARCH=aarch64-unknown-linux-gnu
 
 # Install an up-to-date cmake as well as ninja and make
 RUN apt-get update && \
