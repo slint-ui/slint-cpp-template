@@ -1,4 +1,4 @@
-#include "appwindow.h"
+#include "app-window.h"
 
 int main(int argc, char **argv)
 {
