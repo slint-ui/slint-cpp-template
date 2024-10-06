@@ -1,20 +1,17 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.24)
 project(my_application LANGUAGES CXX)
 
-find_package(Slint QUIET)
-if (NOT Slint_FOUND)
-  message("Slint could not be located in the CMake module search path. Downloading it from Git and building it locally")
-  include(FetchContent)
-  FetchContent_Declare(
-    Slint
-    GIT_REPOSITORY https://github.com/slint-ui/slint.git
-    # `release/1` will auto-upgrade to the latest Slint >= 1.0.0 and < 2.0.0
-    # `release/1.0` will auto-upgrade to the latest Slint >= 1.0.0 and < 1.1.0
-    GIT_TAG release/1
-    SOURCE_SUBDIR api/cpp
-  )
-  FetchContent_MakeAvailable(Slint)
-endif (NOT Slint_FOUND)
+include(FetchContent)
+FetchContent_Declare(
+  Slint
+  GIT_REPOSITORY https://github.com/slint-ui/slint.git
+  # `release/1` will auto-upgrade to the latest Slint >= 1.0.0 and < 2.0.0
+  # `release/1.0` will auto-upgrade to the latest Slint >= 1.0.0 and < 1.1.0
+  GIT_TAG release/1
+  SOURCE_SUBDIR api/cpp
+  FIND_PACKAGE_ARGS NAMES Slint
+)
+FetchContent_MakeAvailable(Slint)
 
 add_executable(my_application src/main.cpp)
 target_link_libraries(my_application PRIVATE Slint::Slint)
