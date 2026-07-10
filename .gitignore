@@ -36,3 +36,6 @@
 
 # CMake build directory
 build
+
+# Gradle / Android build outputs
+.gradle

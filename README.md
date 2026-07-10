@@ -50,6 +50,35 @@ Alternatively, this template will automatically download the Slint sources and c
 
 We recommend using an IDE for development, along with our [LSP-based IDE integration for `.slint` files](https://github.com/slint-ui/slint/blob/master/tools/lsp/README.md). You can also load this project directly in [Visual Studio Code](https://code.visualstudio.com) and install our [Slint extension](https://marketplace.visualstudio.com/items?itemName=Slint.slint).
 
+## Building for Android
+
+The `android/` directory contains a Gradle wrapper around this CMake project that produces an Android APK.
+
+Prerequisites:
+  * [Android Studio](https://developer.android.com/studio) with the Android SDK, NDK, and CMake (in *SDK Tools*).
+  * `ANDROID_HOME` and `ANDROID_NDK_ROOT` set in your environment.
+  * Rust (see above) plus the Android target:
+    ```
+    rustup target add aarch64-linux-android
+    ```
+
+To build and install on a connected device or running emulator:
+
+```
+cd android
+./gradlew installDebug
+```
+
+The first build is slow because Slint and the Skia renderer are compiled from source. View application logs with:
+
+```
+adb logcat -s slint
+```
+
+To target additional ABIs, add them to `abiFilters` in `android/build.gradle.kts` and install the matching Rust targets (`armv7-linux-androideabi`, `x86_64-linux-android`, `i686-linux-android`).
+
+See the [Slint Android guide](https://slint.dev/docs/cpp/platforms/mobile/android) for more details.
+
 ## Next Steps
 
 We hope that this template helps you get started and you enjoy exploring making user interfaces with Slint. To learn more

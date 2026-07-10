@@ -16,7 +16,11 @@ if (NOT Slint_FOUND)
   FetchContent_MakeAvailable(Slint)
 endif (NOT Slint_FOUND)
 
-add_executable(my_application src/main.cpp)
+if(ANDROID)
+    add_library(my_application SHARED src/main.cpp)
+else()
+    add_executable(my_application src/main.cpp)
+endif()
 target_link_libraries(my_application PRIVATE Slint::Slint)
 slint_target_sources(my_application ui/app-window.slint)
 # On Windows, copy the Slint DLL next to the application binary so that it's found.
