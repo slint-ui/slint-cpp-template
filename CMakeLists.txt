@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(my_application LANGUAGES CXX)
 
-find_package(Slint QUIET)
+find_package(Slint 1.18.1 QUIET)
 if (NOT Slint_FOUND)
   message("Slint could not be located in the CMake module search path. Downloading it from Git and building it locally")
   include(FetchContent)
