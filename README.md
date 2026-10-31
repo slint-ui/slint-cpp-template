@@ -77,7 +77,7 @@ adb logcat -s slint
 
 To target additional ABIs, add them to `abiFilters` in `android/build.gradle.kts` and install the matching Rust targets (`armv7-linux-androideabi`, `x86_64-linux-android`, `i686-linux-android`).
 
-See the [Slint Android guide](https://slint.dev/docs/cpp/platforms/mobile/android) for more details.
+See the [Slint Android guide](https://docs.slint.dev/latest/docs/slint/guide/platforms/mobile/android/) for more details.
 
 ## Next Steps
 
